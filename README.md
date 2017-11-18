@@ -56,7 +56,7 @@ I trained a linear SVM in P5.ipynb under the title 'Train Classifier'. For featu
 
 ### Sliding Window Search
 
-####1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
+#### 1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
 I first implemented the simple sliding window method from class under the title 'Algorithm to Determine Sliding Windows'. This worked succesfully on my test image but was unlikey to work in other scenarios due to the narrow scale and search size. I then implemented the find cars method from the lessons which just calculates the HOG features once, then sub-samples those features for each window of interest. This method takes a y-start, y-stop and scale parameter to determine where in the image the windows should be placed and how large they need to be. There is also an inherent overlap of the windows in this method. I experimented with a set of different values that only focused on the road region with smaller windows searching closer to the horizon and larger windows search closer to the front of the car. I also tweaked the algorithm a little to make sure the search windows occured right up to the edges of the left and right of the image. Below are examples of each set of search windows along with a final image of all the search windows drawn at once. I used multiple random colors to try and give a better sense of which lines belong to which search windows.
 
@@ -98,4 +98,6 @@ You can see examples of heat maps in the previous image, here is another where t
 I'm not 100% confident that I chose the best parameters and given more time I'd like to perform a gridsearch to determine if there are better options available. I also tried to pre-process the data such that differences in brightness would be ignored by equalizing the histogram, based on review feedback from a previous project. This gave me a very marginally higher accuracy in the classifier, but when applied to images it seemed to be very bad at detecting vehicles. This is something else I'd like to return to. It would be interesting to test my approach with different weather and lighting conditions, it may fail in that scenario and require more training data.
 
 I also found that it took a long time to process the video on a pretty tricked out laptop, far from real-time. It would be interested to do a type of grid search where I can compare the run-time and accuracy trade of an perhaps choose a classifier and feature extraction that's far faster with no major loss in accuracy.
+
+I also only tried out the standard linear SVM. With more time I would have liked to try the radial with various parameters, perhaps again in some kind of grid search harness.
 
