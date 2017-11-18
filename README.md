@@ -35,7 +35,7 @@ You're reading it!
 
 The code for this step is in P5.ipynb under the title 'Display HOG'
 
-I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` and `non-vehicle` classes:
+I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of some of the `vehicle` and `non-vehicle` classes:
 
 ![example images][image1]
 
@@ -96,4 +96,6 @@ You can see examples of heat maps in the previous image, here is another where t
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
 I'm not 100% confident that I chose the best parameters and given more time I'd like to perform a gridsearch to determine if there are better options available. I also tried to pre-process the data such that differences in brightness would be ignored by equalizing the histogram, based on review feedback from a previous project. This gave me a very marginally higher accuracy in the classifier, but when applied to images it seemed to be very bad at detecting vehicles. This is something else I'd like to return to. It would be interesting to test my approach with different weather and lighting conditions, it may fail in that scenario and require more training data.
+
+I also found that it took a long time to process the video on a pretty tricked out laptop, far from real-time. It would be interested to do a type of grid search where I can compare the run-time and accuracy trade of an perhaps choose a classifier and feature extraction that's far faster with no major loss in accuracy.
 
